@@ -1,0 +1,59 @@
+name:                SymBot
+version:             0.1.0.0
+github:              "githubuser/SymBot"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2021 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/SymBot#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- pdf-toolbox-core
+- io-streams
+- vector >= 0.12.3.1
+- bytestring >= 0.10.12.0
+- containers >=0.6.5.1
+- unordered-containers >= 0.2.16.0
+- pdf-toolbox-document == 0.1.1
+- pdf-toolbox-content
+- text
+- discord-haskell >= 0.1
+- unliftio
+
+library:
+  source-dirs: src
+
+executables:
+  SymBot-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - SymBot
+
+tests:
+  SymBot-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - SymBot
